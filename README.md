@@ -1,4 +1,6 @@
-# <img src="icon.svg" height=30/> Godot Project Template
+<div align="center">
+  <img src="assets/title.png" alt="Elestrals" height=100 />
+</div>
 
 # Setup
 

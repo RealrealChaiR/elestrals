@@ -1,22 +1,101 @@
-[gd_scene format=3 uid="uid://c8ddyjr4m6wd4"]
+[gd_scene load_steps=8 format=3 uid="uid://c8ddyjr4m6wd4"]
+
+[ext_resource type="Texture2D" uid="uid://8fahrsob0mgw" path="res://assets/title.png" id="1_pbfiq"]
+[ext_resource type="Texture2D" uid="uid://c6c4jbl8yky77" path="res://assets/profile.png" id="2_mbbv6"]
+[ext_resource type="Texture2D" uid="uid://b7rheahenlipx" path="res://assets/decks.png" id="3_8yxni"]
+[ext_resource type="Theme" uid="uid://bb5grq1d7e2yn" path="res://src/theme.tres" id="3_emt36"]
+[ext_resource type="Texture2D" uid="uid://dgl7px74dgojb" path="res://assets/shop.png" id="4_lih8u"]
+[ext_resource type="Texture2D" uid="uid://c0kjxrr3ctr36" path="res://assets/packs.png" id="5_444mk"]
+[ext_resource type="Texture2D" uid="uid://ce2rcbiqhepeo" path="res://assets/play.png" id="6_54q3k"]
 
 [node name="Main" type="Node"]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Layout" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="Layout"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 80
+color = Color(0.262932, 0.262932, 0.262932, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="Header" type="ColorRect" parent="Layout"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.119
+offset_bottom = -0.112
+grow_horizontal = 2
+size_flags_vertical = 0
+color = Color(0.120418, 0.120418, 0.120418, 1)
 
-[node name="Title" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Title" type="TextureRect" parent="Layout"]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.05
+anchor_right = 0.75
+anchor_bottom = 0.57
+offset_top = -1.52002
+offset_bottom = 1.51999
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pbfiq")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="NavBar" type="HBoxContainer" parent="Layout"]
+anchors_preset = -1
+anchor_top = 0.719136
+anchor_right = 0.569444
+anchor_bottom = 1.0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Profile" type="Button" parent="Layout/NavBar"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 96
-text = "Title"
+theme = ExtResource("3_emt36")
+text = "Profile"
+icon = ExtResource("2_mbbv6")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Decks" type="Button" parent="Layout/NavBar"]
+layout_mode = 2
+theme = ExtResource("3_emt36")
+text = "Decks"
+icon = ExtResource("3_8yxni")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Shop" type="Button" parent="Layout/NavBar"]
+layout_mode = 2
+theme = ExtResource("3_emt36")
+text = "Shop"
+icon = ExtResource("4_lih8u")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Packs" type="Button" parent="Layout/NavBar"]
+layout_mode = 2
+theme = ExtResource("3_emt36")
+text = "Packs"
+icon = ExtResource("5_444mk")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Play" type="Button" parent="Layout"]
+anchors_preset = -1
+anchor_left = 0.688368
+anchor_top = 0.743827
+anchor_right = 0.945312
+anchor_bottom = 0.95679
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Play"
+icon = ExtResource("6_54q3k")
+icon_alignment = 2
+metadata/_edit_use_anchors_ = true
